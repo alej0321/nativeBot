@@ -3,6 +3,7 @@ import React from 'react';
 import {
   View,
   Text,
+  SafeAreaView,
   StyleSheet
 } from 'react-native';
 
@@ -27,19 +28,29 @@ const steps = [
   },
   {
     id: '2',
-    message: 'bien, gracias',
-    end: true,
+    message: 'usa react native chatbot',
+    trigger: '3'
   },
+  {
+    id: '3',
+    user: true,
+    trigger: '4'
+  },
+  {
+    id: '4',
+    message: 'gracias por usar',
+    end: true
+  }
 ];
 
 
 export default class App extends React.Component{
   render(){
     return(
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         {/* <Text style={styles.text}>coffee Chat</Text> */}
         <ChatBot steps={steps}/>
-      </View>
+      </SafeAreaView>
     )
   }
 }
