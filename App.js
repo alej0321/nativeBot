@@ -22,25 +22,58 @@ const styles = StyleSheet.create({
 
 const steps = [
   {
-    id: '1',
-    message: 'Hola, cómo estás',
-    trigger: '2',
+      id: "Greet",
+      message: "Hola, soy CoffeeBot,Bienvenido a Agenda Cafetera",
+      trigger: "pregunta nombre"
   },
   {
-    id: '2',
-    message: 'usa react native chatbot',
-    trigger: '3'
+      id: "pregunta nombre",
+      message: "Por favor escribe tu nombre",
+      trigger: "Esperando el nombre del usuario"
   },
   {
-    id: '3',
-    user: true,
-    trigger: '4'
+      id: "Esperando el nombre del usuario",
+      user: true,
+      trigger: "pregunta opciones ayuda"
   },
   {
-    id: '4',
-    message: 'gracias por usar',
-    end: true
-  }
+      id: "pregunta opciones ayuda",
+      message: "Hola {previousValue}, en qué te puedo ayudar?",
+      trigger: "Displaying options to eat"
+  },
+  {
+    id: "Displaying options to eat",
+           options: [
+                    /*   {
+                        value: "pizza",
+                        label: "Pizza",
+                        trigger: "Asking for Tomatoes in Pizza"
+                      }, */
+                      { 
+                        value: "Agregar Finca",
+                        label: "Cómo agrego una finca?",
+                        trigger: "Agregar Finca id"
+                      },
+                      { 
+                        value: "Agregar Lote",
+                        label: "Cómo agrego un lote?",
+                        trigger: "Agregar lote id"
+                      }  
+                    ]
+  },
+  {
+          id: "Agregar Finca id",
+          message: "Para agregar una finca dirigete a la sección con el icono del grano de café, presiona el botón de  '+ Añadir', completa los campos y presiona el botón de guardar. ",
+          end: true
+  },
+  {
+          id: "Agregar lote id",
+          message: "Para agregar un lote previamente debes haber agregado una finca,  dirigete a la sección con el icono del grano de café, presiona el botón de  '+ Añadir', completa los campos y presiona el botón de guardar. ",
+          end: true
+},
+
+
+  
 ];
 
 
