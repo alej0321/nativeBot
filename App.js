@@ -38,41 +38,74 @@ const steps = [
   },
   {
       id: "pregunta opciones ayuda",
-      message: "Hola {previousValue}, en qué te puedo ayudar?",
-      trigger: "Displaying options to eat"
+      message: "Hola {previousValue}, tu pregunta está relacionada con : ",
+      trigger: "mostrar opciones"
   },
   {
-    id: "Displaying options to eat",
+    id: "mostrar opciones",
            options: [
-                    /*   {
-                        value: "pizza",
-                        label: "Pizza",
-                        trigger: "Asking for Tomatoes in Pizza"
-                      }, */
                       { 
                         value: "Agregar Finca",
-                        label: "Cómo agrego una finca?",
+                        label: "¿Cómo agrego una finca?",
                         trigger: "Agregar Finca id"
                       },
                       { 
                         value: "Agregar Lote",
-                        label: "Cómo agrego un lote?",
+                        label: "¿Cómo agrego un lote?",
                         trigger: "Agregar lote id"
-                      }  
+                      },
+                      { 
+                        value: "Agregar Floración",
+                        label: "¿Cómo agrego una Floración?",
+                        trigger: "Agregar floración id"
+                      },
+                      { 
+                        value: "Roya",
+                        label: "¿Cómo realizar la actividad de roya?",
+                        trigger: "Roya id"
+                      },
+                      { 
+                        value: "Broca",
+                        label: "¿Cómo realizar la actividad de broca?",
+                        trigger: "Broca id"
+                      },
+                      { 
+                        value: "Comunícate",
+                        label: "Comunícate con nosotros",
+                        trigger: "Comunicate id"
+                      } 
                     ]
   },
   {
           id: "Agregar Finca id",
           message: "Para agregar una finca dirigete a la sección con el icono del grano de café, presiona el botón de  '+ Añadir', completa los campos y presiona el botón de guardar. ",
-          end: true
+          trigger: "mostrar opciones"
   },
   {
           id: "Agregar lote id",
-          message: "Para agregar un lote previamente debes haber agregado una finca,  dirigete a la sección con el icono del grano de café, presiona el botón de  '+ Añadir', completa los campos y presiona el botón de guardar. ",
-          end: true
-},
-
-
+          message: "Para agregar un lote previamente debes haber agregado una finca,  dirigete a la sección con el icono del grano de café, presiona el nombre de la finca, verás un botón que dice 'Ver Lotes', presiónalo y luego presiona el botón circular rojo. Luego encontrarás un formulario con los datos de tu lote, complétalo y presiona el botón Guardar.",
+          trigger: "mostrar opciones"
+  },
+  {
+          id: "Agregar floración id",
+          message: "Para agregar una floración debes haber agregado un  lote previamente, dirigete a la sección con el icono del grano de café, presiona el nombre de la finca, presiona el botón 'Ver Lotes', selecciona un lote, presiona el botón 'Ver floraciones, presiona el botón circular rojo, selecciona la fecha de floración, califica tu floracion y presiona el botón Guardar.'",
+          trigger: "mostrar opciones"
+  },
+  {
+          id: "Roya id",
+          message: "Roya",
+          trigger: "mostrar opciones"
+  },
+  {
+          id: "Broca id",
+          message: "Broca",
+          trigger: "mostrar opciones"
+  },
+  {
+          id: "Comunicate id",
+          message: "Para mayor información puedes enviarnos un correo electrónico a : buxtar2240@gmail.com",
+          trigger: "mostrar opciones"
+  }   
   
 ];
 
